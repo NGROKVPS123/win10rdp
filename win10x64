@@ -4,11 +4,11 @@ apt-get update && apt-get upgrade -y
 apt-get clean
 wget -O w10x64.img https://bit.ly/akuhnetW10x64
 echo "Load ngrok"
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
-unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+wget https://download1078.mediafire.com/okramtqa6kpgRIBn6od4nc7xuCg9_rRufhENHQONc5MPQqW86Ik4FnhVUeXB_rH555eTKm2R96XC9nMZOfAAgftjkRxF7PrugNxdj0_IxfUE21Ses1BxgrhpuHh-O9hWWog94tP4Gz36DnKIBDh71G0Q_o1PAQd_qXnIBgZ9bhkXC1o/8k2xje6qqzhlran/ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
+unzip ngrok-v3-stable-linux-amd64.zip > /dev/null 2>&1
 read -p "Ctrl + V Authtoken(import token ngrok): " CRP 
 ./ngrok authtoken $CRP 
-nohup ./ngrok tcp 3388 &>/dev/null &
+nohup ./ngrok tcp 3389 &>/dev/null &
 echo Download files from sever
 apt-get install qemu
 echo "Please wait...."
