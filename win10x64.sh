@@ -7,14 +7,14 @@ echo "Load ngrok"
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 read -p "Ctrl + V Authtoken(import token ngrok): " CRP 
-./ngrok authtoken $CRP 
-nohup ./ngrok tcp 3388 &>/dev/null &
+./ngrok authtoken $NGROK_AUTH_TOKEN
+nohup ./ngrok tcp 3389 &>/dev/null &
 echo Download files from sever
 apt-get install qemu
 echo "Please wait...."
 echo "Start up Windows"
 echo RDP Address:
-curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+curl http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "Ctrl+C to Copy"
 echo "Wait 1-2 Minutes to complete setup"
 echo "Do not close this tab"
